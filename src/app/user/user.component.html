@@ -1,0 +1,37 @@
+<h4>User List</h4>
+
+<hr>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Address</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of users;let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.name}}</td>
+            <td>{{item.contact}}</td>
+            <td>{{item.address}}</td>
+            <td>
+                <div class="buttons">
+                    <a [routerLink]="['/edit',item._id]">edit</a>
+                    &nbsp;
+                    <a href="javascript:void(0);" (click)="deleteUser(item._id)">Delete</a>
+
+                </div>
+
+                <!-- <div class="buttons">
+                    <button [routerLink]="['/edit',item._id]">Edit </button>
+                    <button href="javascript:void(0);" (click)="deleteUser(item._id)">Delete</button>
+                </div> -->
+            </td>
+        </tr>
+    </tbody>
+</table>
